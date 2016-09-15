@@ -1,0 +1,18 @@
+1. Garbage collections:
+- Đối với LinkedList --> 1 element không được tham chiếu thì sẽ bị kick.
+- Gán Null không có nghĩa là bị thu hồi.
+
+2. Tại sao khai báo biến kiểu class trong class hợp lệ trong Java?
+class IntSLLNode {
+	public int info;
+	public IntSLLNode next;
+}
+- Vì trong Java, khi báo kiểu này thì lấy Reference (địa chỉ).
+
+3. Tại sao truy xuất Array lại nhanh và "cố định" về thời gian?
+- Vì trong bộ nhớ, các phần tử của Arr được xếp kề nhau.
+- Tên biến mảng là pointer chỉ đến vị trí đầu của mảng
+- Công thức truy xuất: Địa chỉ phần tử + index*sizeof()
+
+4. Đánh giá độ phức tạp tính toán:
+	B1: 

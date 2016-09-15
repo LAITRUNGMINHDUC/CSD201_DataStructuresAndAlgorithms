@@ -1,0 +1,30 @@
+1. Cơ chế gọi hàm đệ quy:
+- Thực chất là trường hợp đặc biệt của gọi hàm.
+- Khái niệm:
+	+ Hàm gọi và Hàm được gọi là khác nhau
+	+ Tuy nhiên, đệ quy thì hàm gọi và hàm được gọi là giống nhau, chỉ khác tham số.
+
+2. Cấu trúc vùng nhớ:
+- Code: Chứa code nhị phân
+- Stack: Cấp phát cho hàm được gọi.
+- Data: Biến toàn cục
+- Heap: Cấp phát động
+
+3. Quy trình đọc lệnh 
+- Xác định địa chỉ hàm trong bộ nhớ --> Đưa vào thanh ghi PC (thanh ghi chứa lệnh).
+- 
+
+4. Tại sao lại dùng Stack để lưu địa chỉ hàm?
+- Hàm nào gọi sau ==> Thực hiện trước.
+
+5. Cấu trúc Stack:
+- Stack Pointer: Con trỏ Stack - chứa địa chỉ bắt đầu của một hàm nào đó.
+- Khi có lời gọi hàm, Stack sẽ cấp 1 vùng nhớ khác, và StackPointer sẽ chứa hàm đó.
+- Vùng nhớ cho hàm trong Stack chứa:
+	+ Biến local của hàm
+	+ Địa chỉ của câu lệnh kế tiếp sau lời gọi hàm trong Code Segment.
+	+ Địa chỉ của hàm gọi trong Stack 
+
+6. Lý do biến cục bộ được lưu trong Stack?
+- Vì khi hàm được lưu trong Stack, Stack sẽ cấp phát vùng nhớ để lưu như (5)
+- Khi hàm được thực hiện xong thì bị thu hồi vùng nhớ Stack ==> Mất giá trị của biến cục bộ.

@@ -1,0 +1,20 @@
+1. Đánh giá cấu trúc dữ liệu dựa trên Array và LinkedList:
+- Sử dụng các ưu điểm, nhược điểm của 2 loại để đưa ra nhận xét.
+
+2. Đánh giá Stack khi mô phỏng trên Array và LinkedList:
+- Dùng LinkedList ưu việt hơn vì có biến Head, Tail.
+
+3. Áp dụng Stack:
+- Xét đặc tính "Last in - First out".
+
+4. Bài toán "Thiếu ngoặc":
+- Nguyên tắc: Mở sau - đóng trước.
+- Giải thuật:
+	+ Nếu gặp "( [ {": thì Push.
+	+ Nếu gặp ") ] }":
+		- Pop ra
+		- Kiểm tra xem có đi "đôi" với nhau không. Nếu có thì OK. Ko có thì báo thiếu.
+
+5. Stack, Queue trong Java:
+- Stack là hiện thực lớp Vector
+- Queue là interface --> Hiện thực qua LinkedList.

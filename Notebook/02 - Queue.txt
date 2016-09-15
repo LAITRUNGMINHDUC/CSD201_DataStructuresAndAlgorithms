@@ -1,0 +1,15 @@
+Queue
+
+1. Tại sao người ta lại sử dụng mảng cố định để mô tả Queue mà không dùng ArrayList?
+
+2. Queue đầy khi:
+TH1: 
+	- Last = Size - 1
+	- First = 0
+TH2:
+	- First = Last + 1
+
+3. Queue bằng LinkedList:
+- Thêm vào / Lấy ra trái chiều nhau:
+	+ AddToTail / RemoveHead
+	+ AddToHead / RemoveTail
