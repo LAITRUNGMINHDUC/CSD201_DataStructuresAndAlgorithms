@@ -16,11 +16,11 @@ public class Ex2 {
     public static void main(String[] args) {
         Stack<Integer> S1 = new Stack<>();
         Stack<Integer> Temp = new Stack<>();
-        int Top, TempNum;
+        int TempNum;
 
-        for (int i = 0; i < 10; i++) {
-            S1.push(i);
-        }
+        S1.push(1);
+        S1.push(5);
+        S1.push(3);
 
         int Element = 6;
 

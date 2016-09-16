@@ -3,15 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package BigNumbers;
-
-import java.math.BigInteger;
+package Ex03_p166;
 
 /**
  *
  * @author duclt
  */
-public class test {
+public class MainApp {
 
-    BigInteger A = new BigInteger("999999999999999999");
+    public static void main(String[] args) {
+        String filename = "src/Ex03_p166/TestCase.txt";
+        System.out.println(DelimiterMatching.Matching(filename));
+    }
+
 }

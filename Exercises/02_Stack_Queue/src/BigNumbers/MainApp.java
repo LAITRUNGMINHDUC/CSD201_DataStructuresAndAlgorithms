@@ -5,8 +5,6 @@
  */
 package BigNumbers;
 
-import java.util.Stack;
-
 /**
  *
  * @author duclt

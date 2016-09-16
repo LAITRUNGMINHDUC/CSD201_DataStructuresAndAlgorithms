@@ -57,7 +57,12 @@ public class Calculator {
                 }
             }
         }
-        return Temp.pop();
+        if (Temp.size() == 1) {
+            return Temp.pop();
+        } else {
+            throw new Exception("Invalid Expression");
+        }
+
     }
 
     public static int preCalculate(String prefix) throws Exception {
@@ -77,7 +82,11 @@ public class Calculator {
                 }
             }
         }
-        return Temp.pop();
+        if (Temp.size() == 1) {
+            return Temp.pop();
+        } else {
+            throw new Exception("Invalid Expression");
+        }
     }
 
 }

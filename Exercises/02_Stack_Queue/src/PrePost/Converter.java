@@ -41,7 +41,11 @@ public class Converter {
                 Temp.push(arr[i]);
             }
         }
-        return Temp.pop();
+        if (Temp.size() == 1) {
+            return Temp.pop();
+        } else {
+            throw new Exception("Invalid Expression");
+        }
     }
 
     public static String postToPre(String postfix) throws Exception {
@@ -61,8 +65,11 @@ public class Converter {
                 Temp.push(arr[i]);
             }
         }
-        return Temp.pop();
-
+        if (Temp.size() == 1) {
+            return Temp.pop();
+        } else {
+            throw new Exception("Invalid Expression");
+        }
     }
 
 }
