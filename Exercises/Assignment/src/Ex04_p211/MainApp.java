@@ -6,7 +6,6 @@
 package Ex04_p211;
 
 import java.io.*;
-import java.util.*;
 
 /**
  *
@@ -21,10 +20,6 @@ public class MainApp {
         System.out.println(NewFormat.Pretty(bigText, 1));
 
         System.out.println("Demo 02: ");
-        bigText = loadData("src/Ex04_p211/Demo02.txt");
-        System.out.println(NewFormat.Pretty(bigText, 1));
-
-        System.out.println("Demo 03: ");
         bigText = loadData("src/Ex04_p211/Demo03.txt");
         System.out.println(NewFormat.Pretty(bigText, 1));
 
@@ -38,13 +33,14 @@ public class MainApp {
             BufferedReader br = new BufferedReader(fr);
             String S = "";
             while ((S = br.readLine()) != null) {
-                Tmp = Tmp + S;
+                Tmp = Tmp + S.trim();
             }
             br.close();
             fr.close();
         } catch (Exception e) {
             e.printStackTrace();
         }
+        System.out.println(Tmp + "\n");
         return Tmp.trim();
     }
 }

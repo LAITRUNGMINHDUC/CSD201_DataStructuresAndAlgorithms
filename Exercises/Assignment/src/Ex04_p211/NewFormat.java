@@ -10,12 +10,12 @@ package Ex04_p211;
  * @author duclt
  */
 public class NewFormat {
-    
+
     private static int findPos(String S) {
         int Type01 = S.indexOf(";");
         int Type02 = S.indexOf("{");
         int Type03 = S.indexOf("}");
-        
+
         if (Type01 > -1 && Type02 > -1 && Type03 > -1) {
             return Math.min(Math.min(Type01, Type02), Type03);
         }
@@ -39,7 +39,7 @@ public class NewFormat {
         }
         return 0;
     }
-    
+
     private static String CharProceedString(String S, char c, int level, String tab) {
         int minPos = findPos(S);
         try {
@@ -51,13 +51,33 @@ public class NewFormat {
         }
         return "";
     }
-    
+
+    private static int findPosParenthesis(String S) {
+        int count = 0;
+        boolean flag = false;
+        if (S.contains("if")) {
+            for (int i = S.indexOf("("); i < S.length(); i++) {
+                if (count == 0 && flag) {
+                    return i - 1;
+                }
+                if (S.charAt(i) == '(') {
+                    count++;
+                    flag = true;
+                }
+                if (S.charAt(i) == ')') {
+                    count--;
+                }
+            }
+        }
+        return -1;
+    }
+
     private static String KeywordProceedString(String S, int level, String tab, String kw) {
         int minPos = findPos(S);
         try {
             int posTmp = S.indexOf(kw);
             if (posTmp >= 0 && posTmp > S.indexOf("{") && posTmp <= minPos) {
-                int pos = S.indexOf(")");
+                int pos = findPosParenthesis(S);
                 if (pos < 0 || kw.equals("else")) {
                     pos = minPos;
                 }
@@ -68,14 +88,14 @@ public class NewFormat {
         }
         return "";
     }
-    
+
     public static String Pretty(String S, int level) {
         String tab = "";
         String Tmp = "";
         for (int i = 0; i < level - 1; i++) {
             tab += "\t";
         }
-        //        ///////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////
         Tmp = KeywordProceedString(S, level + 1, tab, "if");
         if (!Tmp.equals("")) {
             return Tmp;
