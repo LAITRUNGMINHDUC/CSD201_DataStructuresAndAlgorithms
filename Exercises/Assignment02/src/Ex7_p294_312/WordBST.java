@@ -67,7 +67,7 @@ public class WordBST {
     public void traversalTree(WordBSTNode p) {
         if (p != null) {
             traversalTree(p.left);
-            System.out.println(p.manualToString());
+            System.out.println(p);
             traversalTree(p.right);
         }
     }

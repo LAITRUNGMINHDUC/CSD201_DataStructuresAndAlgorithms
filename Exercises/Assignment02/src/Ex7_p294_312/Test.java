@@ -29,8 +29,7 @@ public class Test {
 
             while ((S = br.readLine()) != null) {
                 if (S.charAt(0) == '%') {
-                    tree.traversalTree(tree.root);
-                    tree.clear();
+                    tree.traversalTree(tree.root);                    
                     System.out.println("\n" + S);
                 } else {
                     String[] arrLatinEng = S.split(":");
