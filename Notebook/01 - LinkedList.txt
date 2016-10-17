@@ -14,5 +14,27 @@ class IntSLLNode {
 - Tên biến mảng là pointer chỉ đến vị trí đầu của mảng
 - Công thức truy xuất: Địa chỉ phần tử + index*sizeof()
 
-4. Đánh giá độ phức tạp tính toán:
-	B1: 
+===========================================================
+1. Có 3 loại LinkedList:
+- Singly (DS LK đơn): Node chỉ đến con của nó
+- Double (DS LK đôi): Node chỉ đến cha lẫn con
+- Circular (DS LK vòng): Node cuối nối với Node đầu (Tail nối Head chứ Head không nối Tail)
+	
+2. Các thao tác trên Singly:
+- addToHead/ addToTail:
+	+ Tạo node mới 
+	>> Gán next của node vào head hiện tại 
+	>> gán head hiện tại bằng node.
+- deleteFromHead/ deleteFromTail:
+	+ TH tốt nhất: O(1) - khi xóa Tail hoặc Head
+	+ TH trung bình: O(n)
+	+ TH xấu nhất: O(n) - TH này xảy ra khi muốn deleteTail mà dùng deleteFromHead.
+- clearList: head = tail = null
+
+3. Các thao tác trên Doubly:
+- Sự xuất hiện của Doubly để giải quyết vấn đề "ngu ngốc" của "Singly" trong thao tác deleteFromTail (vì em này phải có vòng loop để tìm coi ai là node bố).
+- addToTail:
+	+ Tạo Node >> Gán prev là tail hiện tại >> Gán tail hiện tại là node
+- removeFromTail:
+	+ Gán Tail hiện tại = Tail.prev
+	+ Gán Tail.next = null

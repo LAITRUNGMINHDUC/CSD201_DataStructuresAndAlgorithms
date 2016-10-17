@@ -41,7 +41,7 @@ class IntBST {
             for (int i = space; i < indent; i++) {
                 System.out.print("-");
             }
-            System.out.println(p.key);
+            System.out.println((char) p.key);
         }
     }
 

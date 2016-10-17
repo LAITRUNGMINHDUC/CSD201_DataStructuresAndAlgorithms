@@ -8,6 +8,7 @@ package Ex5_p294_312;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
+import java.util.Scanner;
 
 /**
  *
@@ -17,9 +18,7 @@ public class Test {
 
     WordBST tree = new WordBST();
 
-    public void constructTree() {
-        String fileName = "CrossReference.txt";
-
+    public void constructTree(String fileName) {
         try {
             File f = new File(fileName);
             FileReader fr = new FileReader(f);
@@ -53,7 +52,14 @@ public class Test {
 
     public static void main(String[] args) {
         Test t = new Test();
-        t.constructTree();
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Filename: ");
+        String fileName = sc.nextLine();
+        if (fileName.isEmpty()) {
+            fileName = "CrossReference.txt";
+        }
+
+        t.constructTree(fileName);
         t.printTreeAlphabetical();
     }
 }

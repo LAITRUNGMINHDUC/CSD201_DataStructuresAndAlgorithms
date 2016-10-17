@@ -1,0 +1,40 @@
+1. Nén có 2 loại:
+- Lossless: Nén không mất dữ liệu
+- Lossy: Nén có mất (MP3, JPEG, MP4,...)
+
+2. Nguyên lý nén Lossless:
+- Input chuỗi bit
+- Output chuỗi bit có độ dài nhỏ hơn.
+VD: Input ban đầu là 8 bit mỗi ký tự ==> Nén lại mỗi Input <= 8bit
+
+3. Entropy là độ dài trung bình của code-word.
+4. Người ta có thể tính được Entropy của symbol nếu biết được XS của symbol.
+
+5. Nếu có thuật toán nén tiến đến được Entropy thì hiệu quả.
+
+6. Codeword chỉ biểu diễn cho 1 symbol.
+7. Codeword của 1 symbol thì không được là prefix của một codeword khác.
+8. Symbol xuất hiện càng nhiều thì codeword phải càng ngắn.
+
+9. Thuật toán Huffman:
+- Chọn 2 Root nhỏ nhất
+- Tạo cây mới từ 2 cây cũ với Root mới là tổng 2 Root cũ.
+- Đánh trọng số 1-0 cho cây.
+	+ Giá trị của các leaf là xác suất của ký tự
+- Các bước làm:
+	- Quét toàn bộ file để tính xác suất các ký tự
+	- Tính toán code-word
+	- Quét lại và thay thế
+
+11. Hiện thực Huffman:
+- Doubly LinkedList 
+- Topdown recursive
+- Min-heap
+
+12. Tại sao JPEG, MP3,... là Lossy mà lại dùng Huffman (Lossless)?
+- Các format này loại bỏ dữ liệu thừa ban đầu (Loss tại chỗ này)
+- Áp dụng Huffman lên dữ liệu mới (Lossless)
+
+13. Trong Huffman cải tiến, sử dụng BFS right-to-left để kiểm tra  tính giảm dần của chuỗi, nếu vi phạm thì hoán đổi xảy ra.
+
+14. Run-length hiệu quả khi các Run lớn hơn 5

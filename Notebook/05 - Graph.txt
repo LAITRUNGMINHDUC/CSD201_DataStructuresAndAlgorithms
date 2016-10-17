@@ -1,0 +1,53 @@
+1. Ứng dụng của đồ thị trong thực tế "lớn" là trong các mạng.
+
+2. Circuit: Xuất phát từ một đỉnh, đi qua một số cạnh trở về được đỉnh cũ.
+
+3. Cycle: Là Circuit nhưng các đỉnh đi qua chỉ đi đúng 1 lần.
+
+4. Incidence matrix: Ma trận cạnh kề
+
+5. Kỹ thuật Backtracking - Hiện thực đệ quy
+
+6. Thuật toán tìm đường đi ngắn nhất có 2 loại:
++ One to All
++ All to All
+
+7. Thuật toán tìm đường ngắn nhất tổng quát:
++ Lấy v ra
++ Kiểm tra BĐT cho NHỮNG ĐỈNH KỀ với v, ko phải tại v.
+	currDist(u) > currDist(v) + weight(vu)
++ Muốn có đường đi... thì xem preDecessor
+
+8. Đỉnh kề trong đồ thị có hướng là mũi tên đi ra :3
+
+9. Nếu muốn giải thuật Djisktra chạy cho trọng số âm thì xóa "in toBeChecked" phải không?
+
+10. Label correcting: 
+- "Add u to toBeChecked" là để dùng u để kiểm tra các đỉnh kề với nó khi có update label.
+- Áp dụng cho đồ thị có trọng số âm, nhưng nếu đồ thị có chu trình thì tổng trọng số phải không âm.
+- Lý do: Khi đi qua chu trình âm, giá trị chu trình sẽ âm hoài, âm mãi, âm đến vô cùng ==> Lặp vô cùng.
+
+11. Chạy thử giải thuật cycleDetectionDFS
+12. Dùng FloydWarshall để kiểm tra bằng cách:
+	+ Đặt hàng chéo = vô cực.
+	+ Nếu trong đường chéo != vô cực thì có chu trình tại đỉnh đó.
+
+13. Tại sao dùng "Danh sách liên kết vòng" trong phép "Union-Find" (Nhưng lại dùng mảng để thực hiện danh sách liên kết vòng).
+
+14. Cây là một loại đồ thị LIÊN THÔNG... và KHÔNG CÓ CHU TRÌNH.
+
+15. Duyệt DFS: 
+- Số lần "vòng lặp While đúng" để gọi DFS bằng số đồ thị con.
+- DFS khi duyệt sẽ đi hết đồ thị liên thông.
+
+16. Kiểm tra liên thông bằng DFS:
+- Là kiểm tra số lần vòng lặp While chạy đúng.
+
+17. Ứng dụng của Spanning Tree: 
+- Trong network: cấu hình mạng để gởi gói tin từ A đến B.
+
+18. PP Tham lam:
+- Djisktra sử dụng
+
+19. Kiểm tra Spanning Tree:
+- Đưa cạnh vào, không tạo ra chu trình, và có cạnh = đỉnh - 1

@@ -1,0 +1,44 @@
+BUBBLE SORT
+1. Tại sao Bubble Sort không cần n lần, mà là n-1?
+- Vì ở lần thứ n, chỉ còn có mình n nên không dịch chuyển nữa.
+
+2. Độ phức tạp là O(n^2) là vì cần một vòng lặp để đổi chỗ, và một vòng lặp để duyệt từ đầu đến đuôi.
+
+3. Độ phức tạp là tỉ lệ, là a*x với x = n, n^2,...
+- Suy ra, nói là O(n) tức là bỏ đi a.
+
+4. Lý luận độ phức tạp:
+- Lặp ít nhất thì Swap không thực hiện, Lặp nhiều nhất thì Swap luôn thực hiện.
+- Với . một lần lặp thứ i
+	==> Swap xảy ra (n-i-1)
+
+5. Lặp trung bình:
+
+
+SELECTION SORT
+1. 
+
+INSERTION SORT
+- Chèn vào đúng vị trí để tạo ra mảng con có thứ tự.
+- Best case: O(n)
+- Worst case: O(n^2)
+- Số lần di chuyển (move) là phép gán.
+
+2. Khi Worst và Best khác nhau thì những trường hợp ở giữa sẽ ra sao?
+
+====> INSERTION SORT hiệu quả hơn 2 giải thuật kia do Best case là O(n)
+	===> Nếu một mảng đã gần có thứ tự thì nên dùng INSERTION SORT
+Tuy nhiên, dù cùng có O(n^2) nhưng INSERTION SORT lặp một nửa so với BUBBLE hoặc SELECTION
+
+==================================================================
+SHELL SHORT
+- Dựa trên Divide and conquer
+- Chia mảng lớn thành mảng con và sắp xếp mảng con.
+
+(?) Tại sao phải chia mảng ra thành nhiều mảng con, rồi cuối cùng lại sắp xếp trên chính nó (1 phần tử)?
+
+HEAP SORT
+- Tạo Heap:
+	+ Bottom-up
+	+ Top-down
+- Nguyên lý: Dùng thao tác "Deque" của Heap để sắp xếp.

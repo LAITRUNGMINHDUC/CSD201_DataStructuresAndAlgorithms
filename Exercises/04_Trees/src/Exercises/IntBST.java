@@ -216,8 +216,9 @@ class IntBST {
             System.out.println("the tree is empty");
         }
     }
-
+//////////////////////////////////////////////////////////////////////////////////
     //Exercise 2a
+
     public int CountNode(IntBSTNode p) {
         if (p == null) {
             return 0;
@@ -278,6 +279,68 @@ class IntBST {
         return count;
     }
 
+    // SOLUTION 01
+    public void printPathToLeave() {
+
+    }
+
+    // SOLUTION 02
+    public void printLeftRightLeft() {
+        //Construct Queue
+        IntBSTNode p = root;
+        Queue<IntBSTNode> queue = new LinkedList();
+        LinkedList<IntBSTNode> list = new LinkedList<>();
+        boolean direction = true;
+
+        queue.offer(p);
+        list.add(p);
+        queue.offer(null);
+        while (queue.isEmpty() == false) {
+            p = queue.poll();
+            if (p == null) {
+                if (queue.isEmpty() == false) {
+                    queue.offer(null);
+                    direction = !direction;
+                }
+            } else {
+                if (direction) {
+                    if (p.left != null) {
+                        queue.offer(p.left);
+                        list.add(p.left);                        
+                    }
+                    if (p.right != null) {
+                        queue.offer(p.right);
+                        list.add(p.right);
+                    }
+                } else {
+                    if (p.right != null) {
+                        queue.offer(p.right);
+                        list.add(p.right);
+                    }
+                    if (p.left != null) {
+                        queue.offer(p.left);
+                        list.add(p.left);
+                    }
+                }
+            }
+        }
+
+        //Print out
+        String S = "";
+        while (!queue.isEmpty()) {
+            if (queue.peek() == null) {
+                direction = !direction;
+            }
+            if (direction) {
+                S = S + queue.poll() + " ";
+            }
+            if (!direction) {
+                S = queue.poll() + " " + S;
+            }
+        }
+    }
+
+    // SOLUTION 03
     //Exercise 2c
     public int CountRightChildren(IntBSTNode p) {
         if (p != null) {

@@ -13,3 +13,102 @@
 - Thao tác Delete sẽ phức tạp
 	+ Đánh dấu info = rỗng
 	+ Chọn 1 node đè lên
+
+5. Số lần lặp/ gọi đệ quy trong tìm kiếm cây nhị phân:
+- = Bậc của node
+- TH xấu nhất: Số lần gọi = chiều cao cây.
+==> Tăng tốc độ tìm kiếm bằng cách dùng "Cây Cân bằng".
+
+6. Phép duyệt sâu:
+- Pre-order:
+	+ In cha
+	+ Duyệt trái
+	+ Duyệt phải
+- Post-order:
+- In-order:
+	+ Tạo ra dãy có thứ tự
+	+ Duyệt trái
+	+ In cha
+	+ Duyệt phải
+
+7. Trong phép Insertion, nguyên tắc:
+- Tìm kiếm vị trí của parent node để chèn node vào.
+- Nên khi chạy, cần có parent node, và parent node sẽ đi sau node.
+- Độ phức tạp: phụ thuộc vào chiều cao.
+
+8. Trong phép Deletion:
+- PP Merging: 
+	+ Xóa trực tiếp.
+- PP Copying:
+	+ Xóa gián tiếp và chèn node bên phải nhất lên.
+- Giống nhau: 
+	+ Tìm ra được node cần xóa và parent.
+	+ Phải tìm ra được node bên phải nhất của cây bên trái/ bên trái nhất của cây bên phải.
+- Độ phức tạp: phụ thuộc vào chiều cao.
+
+9. Chiều cao tại con của:
+- Node lá = 0 
+
+10. Cây cân bằng:
+- Cây cân bằng: Chiều cao chưa tối ưu
+	+ Hiệu Chiều cao của cây con tại các node = 0 hoặc 1
+- Cây cân bằng hoàn toàn: Chiều cao tối ưu
+	+ Là cây cân bằng
+	+ Lá chỉ có thể tìm đc ở 1 bậc hoặc 2 bậc.
+
+11. Thao tác XOAY là gì? Giải thuật AVL, DSW sẽ cho ra cây cân bằng hoàn toàn hay cân bằng?
+
+12. Phép DSW:
+- Để xây dựng cây cân bằng hoàn toàn, người ta dựa trên CÂY NHỊ PHÂN ĐẦY ĐỦ gần nhất.
+- Do đó, công thức m = 2^(log(n+1)) - 1 là vậy. Liên hệ về công thức của cây ĐẦY ĐỦ : n <= 2^h - 1 ==> h >= log(n+1)
+- Lấy cận dưới của công thức sẽ cho ra chiều cao của cây nhị phân đầy đủ gần nhất.
+- "Make n-m rotation..." là để tìm ra node "thừa" so với cây nhị phân ĐẦY ĐỦ gần nhất.
+- Các node còn lại sẽ là "đủ" để tạo cây nhị phân ĐẦY ĐỦ.
+
+13. Phép AVL:
+- 
+
+14. Heap:
+- Là cây cân bằng hoàn toàn
+	+ Thêm node từ trái qua phải, bậc cuối cùng.
+- Node cha phải lớn hơn cả 2 node con.
+- Root phải có giá trị lớn nhất cây
+- Các Node lá phải nằm bên TRÁI NHẤT nghĩa là nằm từ TRÁI QUA PHẢI, nhưng phải bắt đầu từ bên TRÁI.
+
+15. Remove, Delete:
+- Delete: Xóa mà không lấy ra (method)
+- Remove: Xóa và lấy
+
+16. Thao tác AddHeap:
+- Xác định vị trí thêm vào
+- So sánh với cha của nó.
+
+17. Thao tác GetHeap (Dequeue):
+- Lấy ra ở Root
+- Lấy node lá cuối cùng BÊN PHẢI NHẤT lên làm Root (Sẽ bị vi phạm Root lớn hơn tất cả)
+- So sánh Root mới với con lớn nhất của nó... và move.
+
+18. Tại sao Heap lại dùng hàng đợi:
+- Heap không phải hàng đợi thông thường, đó là HÀNG ĐỢI CÓ ĐỘ ƯU TIÊN.
+- Do đó, nó không tuân theo FIFO.
+
+19. Trường hợp xấu nhất ở Heap:
+- Thao tác thêm vào:
+	+ Phần tử được thêm lớn hơn Root ==> MoveUp lên tới Root ==> Số lần di chuyển = chiều cao cây ==> O(log n)
+- Thao tác lấy ra:
+	+ Di chuyển xuống tận đáy ==> O (log n)
+
+20. So sánh các cấu trúc:
+- Mảng: Thêm vào (O(1)) - Lấy ra lớn nhất (O(n))
+- LinkedList: Thêm vào (O(1)) - Lấy ra lớn nhất (O(n))
+- Heap: Thêm vào (O(log n)) - Lấy ra (O(log n)).
+
+21. Hiện thực Heap:
+- Dùng LinkedList: 
+	+ Phải duyệt để tìm ra vị trí thêm vào ==> Phức tạp O(n)
+	+ Khi lấy ra cũng dễ bị như vậy.
+- Dùng mảng: Cấu trúc lại dữ liệu:
+	+ Lưu trữ node như BFS
+	+ Công thức xác định vị trí các con:
+		- 2i + 1 và 2i + 2 với i là index của node hiện tại.
+

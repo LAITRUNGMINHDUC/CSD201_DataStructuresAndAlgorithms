@@ -12,7 +12,7 @@
 
 3. Quy trình đọc lệnh 
 - Xác định địa chỉ hàm trong bộ nhớ --> Đưa vào thanh ghi PC (thanh ghi chứa lệnh).
-- 
+
 
 4. Tại sao lại dùng Stack để lưu địa chỉ hàm?
 - Hàm nào gọi sau ==> Thực hiện trước.
@@ -28,3 +28,5 @@
 6. Lý do biến cục bộ được lưu trong Stack?
 - Vì khi hàm được lưu trong Stack, Stack sẽ cấp phát vùng nhớ để lưu như (5)
 - Khi hàm được thực hiện xong thì bị thu hồi vùng nhớ Stack ==> Mất giá trị của biến cục bộ.
+
+7. Máy tính không biết hàm được gọi là đệ quy và không đệ quy ==> Không khác nhau

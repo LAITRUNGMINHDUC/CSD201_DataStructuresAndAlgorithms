@@ -6,6 +6,7 @@
 
 3. Áp dụng Stack:
 - Xét đặc tính "Last in - First out".
+- Đặc tính "lấy ra đảo thứ tự"
 
 4. Bài toán "Thiếu ngoặc":
 - Nguyên tắc: Mở sau - đóng trước.
@@ -18,3 +19,5 @@
 5. Stack, Queue trong Java:
 - Stack là hiện thực lớp Vector
 - Queue là interface --> Hiện thực qua LinkedList.
+
+================================================================

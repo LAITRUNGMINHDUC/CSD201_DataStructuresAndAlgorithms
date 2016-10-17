@@ -30,12 +30,4 @@ public class WordBSTNode {
     public String toString() {
         return this.data + " : " + Arrays.toString(lineNo.toArray());
     }
-
-    public String manualToString() {
-        String S = this.data + " : ";
-        do {
-            S = S + " " + lineNo.remove();
-        } while (!lineNo.isEmpty());
-        return S;
-    }
 }

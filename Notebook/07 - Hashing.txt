@@ -1,0 +1,37 @@
+1. Hashing sẽ giúp tăng tốc độ tìm kiếm vì:
+- Muốn xác định vị trí thì chỉ cần gọi hàm hash là biết được vị trí. Độ phức tạp là O(1).
+- Vấn đề: Nếu dữ liệu giống nhau thì khi hash sẽ giống nhau, dẫn đến tranh chấp.
+
+2. Hàm băm hoàn hảo là hàm đơn ánh:
+- x1 # x2 ==> h(x1) # h(x2)
+
+3. Trong thực tế ở bài toán tính "số cách sắp xếp m thứ vào n túi" thì hàm băm sẽ là "cách sắp xếp".
+ 
+4. Các cách băm:
+- Phép MOD
+- Phép GẤP
+	+ Shift Folding: Gấp tới
+	+ Boundary folding: Gấp xuôi - ngược - xuôi - ngược.
+- Phép MID-SQUARE: Bình phương lên rồi lấy các bit giữa.
+- Phép EXTRACTION: Lấy một phần của khóa để HASH.
+- Phép RADIX TRANSFORMATION:
+
+5. Giải quyết đụng độ:
+- PP1: Đánh địa chỉ mở (Open addressing)
+	- Sử dụng kèm với Thăm dò tuyến tính (Linear probing)
+		- Công thức: (h(K) + i) mod TSize với i = 0 -> n - 1
+	- Khi tìm kiếm thì như Insert.
+	- TH xấu nhất: Duyệt hết mảng băm.
+- PP2: Double hashing.
+- PP3: Seperate Chaining
+	- Ưu: 
+		+ Không bị giới hạn số phần tử do cho phép nhiều phần tử vào một vị trí danh sách liên kết.
+		+ Khi xóa phần tử thì không ảnh hưởng đến việc dò tìm.
+	- Nhược: Khi tìm kiếm, phải tìm trên danh sách liên kết.
+- PP4: Bucket Addressing:
+	- Áp dụng trên file.
+
+6. Hàm băm hoàn hảo nhỏ nhất:
+- PP1: Cichelli
+	+ TH xấu nhất: 4^n phép thử.
+- PP2: 

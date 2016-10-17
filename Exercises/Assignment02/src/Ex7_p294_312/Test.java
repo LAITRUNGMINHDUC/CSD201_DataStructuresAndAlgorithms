@@ -8,6 +8,7 @@ package Ex7_p294_312;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
+import java.util.Scanner;
 
 /**
  *
@@ -17,9 +18,7 @@ public class Test {
 
     WordBST tree = new WordBST();
 
-    public void constructTreeAndPrintResult() {
-        String fileName = "LatinEnglish.txt";
-
+    public void constructTreeAndPrintResult(String fileName) {
         try {
             File f = new File(fileName);
             FileReader fr = new FileReader(f);
@@ -29,7 +28,7 @@ public class Test {
 
             while ((S = br.readLine()) != null) {
                 if (S.charAt(0) == '%') {
-                    tree.traversalTree(tree.root);                    
+                    tree.traversalTree(tree.root);
                     System.out.println("\n" + S);
                 } else {
                     String[] arrLatinEng = S.split(":");
@@ -54,6 +53,13 @@ public class Test {
 
     public static void main(String[] args) {
         Test t = new Test();
-        t.constructTreeAndPrintResult();
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Filename: ");
+        String fileName = sc.nextLine();
+        if (fileName.isEmpty()) {
+            fileName = "LatinEnglish.txt";
+        }
+
+        t.constructTreeAndPrintResult(fileName);
     }
 }

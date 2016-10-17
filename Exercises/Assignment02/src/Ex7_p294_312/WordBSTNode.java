@@ -30,12 +30,4 @@ public class WordBSTNode {
     public String toString() {
         return this.data + " : " + Arrays.toString(latinList.toArray());
     }
-
-    public String manualToString() {
-        String S = this.data + " : ";
-        do {
-            S = S + latinList.remove() + " ";
-        } while (!latinList.isEmpty());
-        return S;
-    }
 }
